@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Message - Character Counter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📬 Send Message</h1>
+            <p>Share your thoughts with us</p>
+        </header>
+
+        <div class="success-message" id="successMessage">
+            ✓ Your message has been sent successfully!
+        </div>
+
+        <form id="messageForm">
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea 
+                    id="message" 
+                    name="message"
+                    placeholder="Type your message here... (max 200 characters excluding spaces)"
+                    required
+                ></textarea>
+                
+                <!-- CHARACTER COUNTER -->
+                <div class="counter-section" id="counterSection">
+                    <span class="counter-label">Characters remaining:</span>
+                    <div class="counter-display">
+                        <span class="char-count" id="charCount">200</span>
+                        <span class="char-max">/ 200</span>
+                    </div>
+                </div>
+
+                <!-- PROGRESS BAR -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <p class="info-text" id="infoText">
+                    Character count excludes spaces between words
+                </p>
+            </div>
+
+            <!-- SUBMIT BUTTON -->
+            <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+        </form>
+    </div>
+
+    <script>
+        const textarea = document.getElementById('message');
+        const charCountDisplay = document.getElementById('charCount');
+        const counterSection = document.getElementById('counterSection');
+        const progressFill = document.getElementById('progressFill');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+        const infoText = document.getElementById('infoText');
+        const form = document.getElementById('messageForm');
+
+        const MAX_CHARS = 200;
+
+        // Function to count characters excluding spaces
+        function countCharactersWithoutSpaces(text) {
+            return text.replace(/\s/g, '').length;
+        }
+
+        // Function to update the counter
+        function updateCounter() {
+            const text = textarea.value;
+            const charCount = countCharactersWithoutSpaces(text);
+            const charsLeft = MAX_CHARS - charCount;
+
+            // Update display
+            charCountDisplay.textContent = charsLeft;
+
+            // Update progress bar
+            const progress = (charCount / MAX_CHARS) * 100;
+            progressFill.style.width = progress + '%';
+
+            // Update counter section styling based on remaining characters
+            counterSection.classList.remove('warning', 'limit-reached');
+            progressFill.classList.remove('warning', 'limit');
+
+            if (charCount >= MAX_CHARS) {
+                counterSection.classList.add('limit-reached');
+                progressFill.classList.add('limit');
+                submitBtn.disabled = false; // Allow submit at exact limit
+            } else if (charCount >= MAX_CHARS * 0.8) {
+                // Warning state (80% of limit)
+                counterSection.classList.add('warning');
+                progressFill.classList.add('warning');
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.disabled = false;
+            }
+
+            // Disable further input if limit is reached
+            if (charCount > MAX_CHARS) {
+                const fullText = text;
+                const charArray = Array.from(fullText);
+                let currentCount = 0;
+                let trimmedText = '';
+
+                // Rebuild text, excluding characters beyond the limit
+                for (let char of charArray) {
+                    if (char !== ' ') {
+                        currentCount++;
+                    }
+                    if (currentCount <= MAX_CHARS || char === ' ') {
+                        trimmedText += char;
+                    }
+                    if (currentCount > MAX_CHARS && char !== ' ') {
+                        break;
+                    }
+                }
+
+                textarea.value = trimmedText;
+                // Recursively update to reflect changes
+                setTimeout(updateCounter, 0);
+            }
+        }
+
+        // Event listener for input
+        textarea.addEventListener('input', updateCounter);
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const charCount = countCharactersWithoutSpaces(textarea.value);
+
+            if (charCount === 0) {
+                alert('Please enter a message.');
+                return;
+            }
+
+            if (charCount > MAX_CHARS) {
+                alert('Message exceeds 200 characters limit.');
+                return;
+            }
+
+            // Show success message
+            successMessage.classList.add('show');
+
+            // Log message data (in a real app, would send to server)
+            console.log('Message sent:', {
+                message: textarea.value,
+                characterCount: charCount,
+                timestamp: new Date().toLocaleString()
+            });
+
+            // Reset form
+            form.reset();
+            updateCounter();
+
+            // Hide success message after 3 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 3000);
+        });
+
+        // Initialize counter on page load
+        updateCounter();
+    </script>
+</body>
+</html>
