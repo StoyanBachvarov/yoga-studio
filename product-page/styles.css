@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f5f5;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* PRODUCT HEADER */
+.product-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.product-image {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    font-size: 5rem;
+}
+
+.product-details h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-brand {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-size: 1.8rem;
+    color: #667eea;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.rating {
+    color: #ffc107;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.product-description {
+    color: #666;
+    line-height: 1.8;
+    margin: 1rem 0;
+}
+
+.buy-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.buy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* TABS */
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 0 2rem;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab-button:hover {
+    color: #667eea;
+}
+
+.tab-button.active {
+    color: #667eea;
+    border-bottom-color: #667eea;
+}
+
+/* TAB CONTENT */
+.tab-content {
+    display: none;
+    padding: 2rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.tab-content h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* PRODUCT INFO TAB */
+.info-section {
+    margin-bottom: 2rem;
+}
+
+.info-section h3 {
+    color: #667eea;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+.info-section p {
+    color: #666;
+    line-height: 1.8;
+}
+
+.features-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.features-list li {
+    padding: 0.6rem 0;
+    color: #666;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.features-list li:before {
+    content: "✓ ";
+    color: #4caf50;
+    font-weight: bold;
+    margin-right: 0.8rem;
+}
+
+/* SPECIFICATIONS TAB */
+.specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.spec-item {
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 6px;
+}
+
+.spec-label {
+    color: #999;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+}
+
+.spec-value {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* REVIEWS TAB */
+.review-item {
+    padding: 1.5rem;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.review-author {
+    color: #333;
+    font-weight: 600;
+}
+
+.review-rating {
+    color: #ffc107;
+}
+
+.review-date {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.review-text {
+    color: #666;
+    line-height: 1.8;
+}
+
+.no-reviews {
+    text-align: center;
+    color: #999;
+    padding: 2rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .product-header {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .product-details h1 {
+        font-size: 1.5rem;
+    }
+
+    .product-price {
+        font-size: 1.5rem;
+    }
+
+    .tabs {
+        padding: 0 1rem;
+        overflow-x: auto;
+    }
+
+    .tab-button {
+        padding: 0.8rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .tab-content {
+        padding: 1.5rem;
+    }
+
+    .specs-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+
+    .container {
+        border-radius: 8px;
+    }
+
+    .product-header {
+        padding: 1.5rem;
+    }
+
+    .product-image {
+        min-height: 200px;
+        font-size: 3rem;
+    }
+
+    .product-details h1 {
+        font-size: 1.3rem;
+    }
+
+    .product-price {
+        font-size: 1.3rem;
+    }
+
+    .tabs {
+        padding: 0;
+    }
+
+    .tab-button {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .tab-content {
+        padding: 1rem;
+    }
+
+    .tab-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .info-section h3 {
+        font-size: 1rem;
+    }
+
+    .spec-item {
+        padding: 0.8rem;
+    }
+
+    .review-item {
+        padding: 1rem;
+    }
+
+    .buy-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
