@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Instructors - Serenity Yoga Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .instructor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .instructor-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid #9d84b7;
+        }
+
+        .instructor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .instructor-avatar {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #9d84b7 0%, #6b5b95 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        .instructor-info {
+            padding: 1.5rem;
+        }
+
+        .instructor-info h3 {
+            color: #6b5b95;
+            margin-bottom: 0.3rem;
+            font-size: 1.3rem;
+        }
+
+        .instructor-role {
+            color: #9d84b7;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .instructor-bio {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .specialties {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .specialties strong {
+            color: #6b5b95;
+        }
+
+        @media (max-width: 768px) {
+            .instructor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">🧘</a>
+            <h1>Serenity Yoga Studio</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="classes.html">Classes</a>
+            <a href="instructors.html">Instructors</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        <!-- SIDEBAR -->
+        <aside>
+            <h3>Instructor Info</h3>
+            <nav>
+                <ul>
+                    <li><a href="#sarah">Sarah Mitchell</a></li>
+                    <li><a href="#james">James Chen</a></li>
+                    <li><a href="#maya">Maya Patel</a></li>
+                    <li><a href="#alex">Alex Rodriguez</a></li>
+                    <li><a href="#emma">Emma Thompson</a></li>
+                    <li><a href="#become">Become an Instructor</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <!-- BANNER -->
+            <section class="banner">
+                <h2>Meet Our Instructors</h2>
+                <p>Experienced, Certified, and Passionate About Your Yoga Journey</p>
+            </section>
+
+            <p style="color: #666; margin: 1rem 0; line-height: 1.8;">
+                Our team of certified yoga instructors brings decades of combined experience and a genuine passion for helping students achieve their wellness goals. Each instructor brings their unique style and expertise to create a welcoming, supportive environment for practitioners of all levels.
+            </p>
+
+            <!-- INSTRUCTORS GRID -->
+            <div class="instructor-grid">
+                <div class="instructor-card" id="sarah">
+                    <div class="instructor-avatar">🧘‍♀️</div>
+                    <div class="instructor-info">
+                        <h3>Sarah Mitchell</h3>
+                        <p class="instructor-role">Head Instructor & Founder</p>
+                        <p class="instructor-bio">With 15 years of yoga experience, Sarah founded Serenity Yoga Studio with the mission of creating a sanctuary for healing and growth. Her warm teaching style and attention to detail inspire students to deepen their practice.</p>
+                        <p class="specialties"><strong>Specialties:</strong> Hatha, Restorative, Prenatal Yoga</p>
+                    </div>
+                </div>
+
+                <div class="instructor-card" id="james">
+                    <div class="instructor-avatar">🧑‍🏫</div>
+                    <div class="instructor-info">
+                        <h3>James Chen</h3>
+                        <p class="instructor-role">Vinyasa Flow Specialist</p>
+                        <p class="instructor-bio">James brings dynamic energy to every class. A former athlete, he specializes in helping students build strength and endurance through flowing sequences. His uplifting spirit motivates students to challenge themselves.</p>
+                        <p class="specialties"><strong>Specialties:</strong> Vinyasa Flow, Power Yoga, Arm Balances</p>
+                    </div>
+                </div>
+
+                <div class="instructor-card" id="maya">
+                    <div class="instructor-avatar">🕉️</div>
+                    <div class="instructor-info">
+                        <h3>Maya Patel</h3>
+                        <p class="instructor-role">Meditation & Mindfulness Coach</p>
+                        <p class="instructor-bio">Maya's calm presence and deep meditation knowledge create transformative experiences. She integrates ancient yogic philosophy with modern mindfulness techniques to help students find peace amidst life's chaos.</p>
+                        <p class="specialties"><strong>Specialties:</strong> Meditation, Breathing, Yin Yoga, Philosophy</p>
+                    </div>
+                </div>
+
+                <div class="instructor-card" id="alex">
+                    <div class="instructor-avatar">💪</div>
+                    <div class="instructor-info">
+                        <h3>Alex Rodriguez</h3>
+                        <p class="instructor-role">Yoga Therapy Specialist</p>
+                        <p class="instructor-bio">Alex specializes in therapeutic yoga for injury recovery and chronic pain management. His evidence-based approach combines anatomy knowledge with compassionate instruction for healing and rehabilitation.</p>
+                        <p class="specialties"><strong>Specialties:</strong> Therapeutic Yoga, Back Care, Alignment</p>
+                    </div>
+                </div>
+
+                <div class="instructor-card" id="emma">
+                    <div class="instructor-avatar">🌟</div>
+                    <div class="instructor-info">
+                        <h3>Emma Thompson</h3>
+                        <p class="instructor-role">Family & Kids Yoga Instructor</p>
+                        <p class="instructor-bio">Emma makes yoga fun and accessible for all ages. Her creative, playful approach teaches children the benefits of yoga while creating joyful, family-bonding experiences on the mat.</p>
+                        <p class="specialties"><strong>Specialties:</strong> Family Yoga, Kids Yoga, Yoga Games</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BECOME INSTRUCTOR SECTION -->
+            <section class="banner" style="margin-top: 3rem; background: linear-gradient(135deg, #e8d7c3 0%, #d4c5b9 100%);">
+                <h2 id="become">Join Our Teaching Team</h2>
+                <p>We're always looking for passionate yoga instructors to join Serenity Yoga Studio. If you're a certified yoga teacher interested in sharing your knowledge with our community, we'd love to hear from you!</p>
+                <p style="margin-top: 1rem;"><a href="contact.html" style="color: #6b5b95; font-weight: 600; text-decoration: none;">Contact us to apply →</a></p>
+            </section>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Classes</h4>
+                <ul>
+                    <li><a href="classes.html#hatha">Hatha Yoga</a></li>
+                    <li><a href="classes.html#vinyasa">Vinyasa Flow</a></li>
+                    <li><a href="classes.html#restorative">Restorative Yoga</a></li>
+                    <li><a href="classes.html#meditation">Meditation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Studio Info</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="instructors.html">Our Instructors</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#member">Membership</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Serenity Yoga Studio. All rights reserved. | Design by Your Company</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Serenity Yoga Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #9d84b7;
+        }
+
+        .contact-card h3 {
+            color: #6b5b95;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-info {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .contact-info strong {
+            color: #333;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #6b5b95;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #9d84b7;
+            box-shadow: 0 0 0 3px rgba(157, 132, 183, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #9d84b7 0%, #6b5b95 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(107, 91, 149, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: #f0f0f0;
+            color: #6b5b95;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, #9d84b7 0%, #6b5b95 100%);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .map-container {
+            background: linear-gradient(135deg, #9d84b7 0%, #6b5b95 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            color: white;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .map-container h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">🧘</a>
+            <h1>Serenity Yoga Studio</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="classes.html">Classes</a>
+            <a href="instructors.html">Instructors</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        <!-- SIDEBAR -->
+        <aside>
+            <h3>Get in Touch</h3>
+            <nav>
+                <ul>
+                    <li><a href="#contact-form">Contact Form</a></li>
+                    <li><a href="#studio-info">Studio Info</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#hours">Hours</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#social">Social Media</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <!-- BANNER -->
+            <section class="banner">
+                <h2>Contact Us</h2>
+                <p>We'd Love to Hear From You - Let's Connect!</p>
+            </section>
+
+            <!-- CONTACT GRID -->
+            <div class="contact-grid">
+                <!-- CONTACT FORM -->
+                <form id="contact-form" class="contact-card">
+                    <h3>Send Us a Message</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a topic...</option>
+                            <option value="classes">Class Registration</option>
+                            <option value="private">Private Sessions</option>
+                            <option value="teacher">Teacher Application</option>
+                            <option value="events">Events & Workshops</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+                <!-- CONTACT INFO -->
+                <div id="studio-info" class="contact-card">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-info">
+                        <strong>Studio Address:</strong><br>
+                        Serenity Yoga Studio<br>
+                        456 Zen Lane<br>
+                        Wellness City, WC 12345<br>
+                        United States
+                    </div>
+
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-info">
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+15551234567" style="color: #6b5b95; text-decoration: none;">(555) 123-4567</a><br>
+                        Available Mon-Fri, 9 AM - 6 PM
+                    </div>
+
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-info">
+                        <strong>Email:</strong><br>
+                        <a href="mailto:info@serenityyogastudio.com" style="color: #6b5b95; text-decoration: none;">info@serenityyogastudio.com</a><br>
+                        Response within 24 hours
+                    </div>
+
+                    <div id="social" class="contact-icon">🌐</div>
+                    <div class="social-links">
+                        <a href="#facebook" title="Facebook">f</a>
+                        <a href="#instagram" title="Instagram">📷</a>
+                        <a href="#twitter" title="Twitter">𝕏</a>
+                        <a href="#youtube" title="YouTube">▶</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOCATION & HOURS -->
+            <div class="map-container" id="location">
+                <h3>🗺️ Find Us Here</h3>
+                <p>Located in the heart of Wellness City, just minutes from downtown. Easy parking available.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">Embedded map would appear here in a real website</p>
+            </div>
+
+            <!-- HOURS OF OPERATION -->
+            <section class="articles" style="margin-top: 2rem;">
+                <article id="hours">
+                    <h3>⏰ Hours of Operation</h3>
+                    <p><strong>Monday - Friday:</strong> 6:00 AM - 8:00 PM</p>
+                    <p><strong>Saturday:</strong> 8:00 AM - 6:00 PM</p>
+                    <p><strong>Sunday:</strong> 9:00 AM - 5:00 PM</p>
+                    <p style="margin-top: 1rem; color: #9d84b7; font-weight: 600;">Closed on major holidays</p>
+                </article>
+
+                <article id="faq">
+                    <h3>❓ Frequently Asked Questions</h3>
+                    <p><strong>Q: Do I need to book in advance?</strong></p>
+                    <p>You can drop in anytime, but booking in advance ensures your spot in the class.</p>
+                    
+                    <p style="margin-top: 1rem;"><strong>Q: What should I bring?</strong></p>
+                    <p>Bring a yoga mat (we have extras), a towel, and water. Wear comfortable, breathable clothing.</p>
+                    
+                    <p style="margin-top: 1rem;"><strong>Q: Can I get a refund?</strong></p>
+                    <p>Yes! Cancellations made 24 hours before class receive a full refund or class credit.</p>
+                </article>
+
+                <article>
+                    <h3>🎁 Special Offers</h3>
+                    <p><strong>First-Time Visitor:</strong> 50% off your first drop-in class</p>
+                    <p><strong>Student Discount:</strong> 20% off monthly unlimited with valid student ID</p>
+                    <p><strong>Senior Discount:</strong> 15% off all class packages for ages 65+</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Limited time offers - ask an instructor for details!</p>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Classes</h4>
+                <ul>
+                    <li><a href="classes.html#hatha">Hatha Yoga</a></li>
+                    <li><a href="classes.html#vinyasa">Vinyasa Flow</a></li>
+                    <li><a href="classes.html#restorative">Restorative Yoga</a></li>
+                    <li><a href="classes.html#meditation">Meditation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Studio Info</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="instructors.html">Our Instructors</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#member">Membership</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Serenity Yoga Studio. All rights reserved. | Design by Your Company</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handler
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule - Serenity Yoga Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .schedule-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        .schedule-table th {
+            background: linear-gradient(135deg, #9d84b7 0%, #6b5b95 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .schedule-table td {
+            border-bottom: 1px solid #ddd;
+            padding: 1rem;
+            color: #666;
+        }
+
+        .schedule-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .time {
+            font-weight: 600;
+            color: #6b5b95;
+            min-width: 80px;
+        }
+
+        .class-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .instructor-name {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 0.3rem;
+        }
+
+        .level {
+            display: inline-block;
+            background: #e8d7c3;
+            color: #6b5b95;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .note {
+            background: #fffaf0;
+            border-left: 4px solid #9d84b7;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .note h4 {
+            color: #6b5b95;
+            margin-bottom: 0.5rem;
+        }
+
+        .note p {
+            color: #666;
+            margin: 0.3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .schedule-table {
+                font-size: 0.9rem;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 0.7rem;
+            }
+
+            .level {
+                display: block;
+                margin-left: 0;
+                margin-top: 0.3rem;
+                width: fit-content;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">🧘</a>
+            <h1>Serenity Yoga Studio</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="classes.html">Classes</a>
+            <a href="instructors.html">Instructors</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        <!-- SIDEBAR -->
+        <aside>
+            <h3>Schedule Info</h3>
+            <nav>
+                <ul>
+                    <li><a href="#weekly">Weekly Schedule</a></li>
+                    <li><a href="#morning">Morning Classes</a></li>
+                    <li><a href="#evening">Evening Classes</a></li>
+                    <li><a href="#weekend">Weekend Classes</a></li>
+                    <li><a href="#special">Special Events</a></li>
+                    <li><a href="contact.html">Book a Class</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <!-- BANNER -->
+            <section class="banner">
+                <h2>Class Schedule</h2>
+                <p>Find the Perfect Time That Fits Your Lifestyle</p>
+            </section>
+
+            <div class="note">
+                <h4>📅 Studio Hours</h4>
+                <p><strong>Monday - Friday:</strong> 6:00 AM - 8:00 PM</p>
+                <p><strong>Saturday:</strong> 8:00 AM - 6:00 PM</p>
+                <p><strong>Sunday:</strong> 9:00 AM - 5:00 PM</p>
+            </div>
+
+            <!-- WEEKLY SCHEDULE -->
+            <h2 id="weekly">Weekly Class Schedule</h2>
+            <div class="schedule-container">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="time">6:00 AM</td>
+                            <td>
+                                <div class="class-name">Vinyasa Flow <span class="level">Int</span></div>
+                                <div class="instructor-name">James Chen</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="class-name">Hatha Yoga <span class="level">All</span></div>
+                                <div class="instructor-name">Sarah Mitchell</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Vinyasa Flow <span class="level">Int</span></div>
+                                <div class="instructor-name">James Chen</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Hatha Yoga <span class="level">All</span></div>
+                                <div class="instructor-name">Sarah Mitchell</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="time">9:00 AM</td>
+                            <td>
+                                <div class="class-name">Meditation <span class="level">All</span></div>
+                                <div class="instructor-name">Maya Patel</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Restorative <span class="level">All</span></div>
+                                <div class="instructor-name">Alex Rodriguez</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="class-name">Meditation <span class="level">All</span></div>
+                                <div class="instructor-name">Maya Patel</div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="time">12:00 PM</td>
+                            <td></td>
+                            <td>
+                                <div class="class-name">Hatha Yoga <span class="level">All</span></div>
+                                <div class="instructor-name">Sarah Mitchell</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="class-name">Hatha Yoga <span class="level">All</span></div>
+                                <div class="instructor-name">Sarah Mitchell</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Vinyasa Flow <span class="level">Int</span></div>
+                                <div class="instructor-name">James Chen</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="time">5:30 PM</td>
+                            <td>
+                                <div class="class-name">Vinyasa Flow <span class="level">Int</span></div>
+                                <div class="instructor-name">James Chen</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Meditation <span class="level">All</span></div>
+                                <div class="instructor-name">Maya Patel</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Vinyasa Flow <span class="level">Int</span></div>
+                                <div class="instructor-name">James Chen</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Meditation <span class="level">All</span></div>
+                                <div class="instructor-name">Maya Patel</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Restorative <span class="level">All</span></div>
+                                <div class="instructor-name">Alex Rodriguez</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="time">7:00 PM</td>
+                            <td>
+                                <div class="class-name">Restorative <span class="level">All</span></div>
+                                <div class="instructor-name">Sarah Mitchell</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Hatha Yoga <span class="level">All</span></div>
+                                <div class="instructor-name">Sarah Mitchell</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Restorative <span class="level">All</span></div>
+                                <div class="instructor-name">Alex Rodriguez</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Hatha Yoga <span class="level">All</span></div>
+                                <div class="instructor-name">Sarah Mitchell</div>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- WEEKEND SCHEDULE -->
+            <h2 id="weekend" style="margin-top: 3rem;">Weekend Classes</h2>
+            <div class="schedule-container">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Saturday</th>
+                            <th>Sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="time">8:00 AM</td>
+                            <td>
+                                <div class="class-name">Family Yoga <span class="level">All</span></div>
+                                <div class="instructor-name">Emma Thompson</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Hatha Yoga <span class="level">All</span></div>
+                                <div class="instructor-name">Sarah Mitchell</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="time">10:00 AM</td>
+                            <td>
+                                <div class="class-name">Vinyasa Flow <span class="level">Int</span></div>
+                                <div class="instructor-name">James Chen</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Meditation & Yoga <span class="level">All</span></div>
+                                <div class="instructor-name">Maya Patel</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="time">4:00 PM</td>
+                            <td>
+                                <div class="class-name">Restorative <span class="level">All</span></div>
+                                <div class="instructor-name">Alex Rodriguez</div>
+                            </td>
+                            <td>
+                                <div class="class-name">Restorative <span class="level">All</span></div>
+                                <div class="instructor-name">Sarah Mitchell</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- SPECIAL EVENTS -->
+            <h2 id="special" style="margin-top: 3rem;">Special Events & Workshops</h2>
+            <section class="articles">
+                <article>
+                    <h3>🌙 Full Moon Meditation Ceremony</h3>
+                    <p class="article-meta">Last Friday of Every Month • 6:00 PM</p>
+                    <p>Join us for a special full moon meditation ceremony led by Maya Patel. This sacred gathering celebrates lunar energy and includes guided meditation, breathwork, and sound healing.</p>
+                </article>
+                <article>
+                    <h3>🧘‍♀️ Weekend Yoga Workshops</h3>
+                    <p class="article-meta">Second Saturday of Every Month • 10:00 AM - 12:00 PM</p>
+                    <p>Dive deeper into specific yoga topics through our monthly workshops. Topics include arm balances, yoga philosophy, pranayama techniques, and more.</p>
+                </article>
+                <article>
+                    <h3>🌍 Yoga Retreats</h3>
+                    <p class="article-meta">Spring & Fall • Dates Announced Monthly</p>
+                    <p>Escape the daily grind with our immersive yoga retreats. Experience multi-day programs combining yoga, meditation, healthy meals, and nature immersion.</p>
+                </article>
+            </section>
+
+            <div class="note" style="margin-top: 2rem;">
+                <h4>📝 How to Register</h4>
+                <p>You can drop in to any class, or <a href="contact.html" style="color: #6b5b95; font-weight: 600;">contact us</a> to register in advance. Class sizes are limited to ensure personalized attention.</p>
+                <p>First-time students receive a 50% discount on their first drop-in class!</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Classes</h4>
+                <ul>
+                    <li><a href="classes.html#hatha">Hatha Yoga</a></li>
+                    <li><a href="classes.html#vinyasa">Vinyasa Flow</a></li>
+                    <li><a href="classes.html#restorative">Restorative Yoga</a></li>
+                    <li><a href="classes.html#meditation">Meditation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Studio Info</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="instructors.html">Our Instructors</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#member">Membership</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Serenity Yoga Studio. All rights reserved. | Design by Your Company</p>
+        </div>
+    </footer>
+</body>
+</html>
