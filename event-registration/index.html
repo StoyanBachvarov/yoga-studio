@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Annual Conference - Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 HTML Annual Conference</h1>
+            <p>2026 Web Development Conference - Registration Form</p>
+        </header>
+
+        <div class="success-message" id="successMessage">
+            ✓ Registration submitted successfully! We'll see you at the conference.
+        </div>
+
+        <form id="registrationForm">
+            <!-- FULL NAME -->
+            <div class="form-group">
+                <label for="fullName">
+                    Full Name
+                    <span class="required">*</span>
+                </label>
+                <input 
+                    type="text" 
+                    id="fullName" 
+                    name="fullName" 
+                    placeholder="Enter your full name"
+                    required
+                />
+            </div>
+
+            <!-- EMAIL -->
+            <div class="form-group">
+                <label for="email">
+                    Email Address
+                    <span class="required">*</span>
+                </label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="Enter your email address"
+                    required
+                />
+            </div>
+
+            <!-- ATTENDANCE TYPE -->
+            <div class="form-group">
+                <label>
+                    Attendance Type
+                    <span class="required">*</span>
+                </label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input 
+                            type="radio" 
+                            id="inPerson" 
+                            name="attendance" 
+                            value="In-person"
+                            checked
+                            required
+                        />
+                        <label for="inPerson">In-person</label>
+                    </div>
+                    <div class="radio-option">
+                        <input 
+                            type="radio" 
+                            id="virtual" 
+                            name="attendance" 
+                            value="Virtual"
+                            required
+                        />
+                        <label for="virtual">Virtual</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WORKSHOPS -->
+            <div class="form-group">
+                <label>
+                    Select Workshops
+                    <span class="required">*</span>
+                </label>
+                <div class="checkbox-group">
+                    <div class="checkbox-option">
+                        <input 
+                            type="checkbox" 
+                            id="htmlBasics" 
+                            name="workshops" 
+                            value="HTML Basics"
+                        />
+                        <label for="htmlBasics">HTML Basics</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input 
+                            type="checkbox" 
+                            id="cssLayouts" 
+                            name="workshops" 
+                            value="CSS Layouts"
+                        />
+                        <label for="cssLayouts">CSS Layouts</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input 
+                            type="checkbox" 
+                            id="jsIntro" 
+                            name="workshops" 
+                            value="JS Intro"
+                        />
+                        <label for="jsIntro">JS Intro</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MEAL PREFERENCE -->
+            <div class="form-group">
+                <label for="mealPref">
+                    Meal Preference
+                    <span class="required">*</span>
+                </label>
+                <select id="mealPref" name="mealPref" required>
+                    <option value="">-- Select an option --</option>
+                    <option value="Standard">🍗 Standard</option>
+                    <option value="Vegetarian">🥗 Vegetarian</option>
+                    <option value="Vegan">🌱 Vegan</option>
+                    <option value="Gluten-Free">🌾 Gluten-Free</option>
+                </select>
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="btn-group">
+                <button type="reset" class="reset-btn">Clear Form</button>
+                <button type="submit" class="submit-btn">Register Now</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Form submission handler
+        const form = document.getElementById('registrationForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Validate at least one workshop is selected
+            const workshops = document.querySelectorAll('input[name="workshops"]:checked');
+            if (workshops.length === 0) {
+                alert('Please select at least one workshop.');
+                return;
+            }
+
+            // Get form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                attendance: document.querySelector('input[name="attendance"]:checked').value,
+                workshops: Array.from(workshops).map(w => w.value),
+                mealPref: document.getElementById('mealPref').value
+            };
+
+            // Log form data (in a real application, this would be sent to a server)
+            console.log('Registration Data:', formData);
+
+            // Show success message
+            successMessage.classList.add('show');
+
+            // Reset form
+            form.reset();
+
+            // Hide success message after 4 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 4000);
+        });
+
+        // Validate at least one workshop on form submission
+        form.addEventListener('change', function() {
+            const workshops = document.querySelectorAll('input[name="workshops"]:checked');
+            if (workshops.length === 0) {
+                // Visual feedback can be added here if needed
+            }
+        });
+    </script>
+</body>
+</html>
