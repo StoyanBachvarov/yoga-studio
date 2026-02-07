@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today - Daily Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Daily Planner</h1>
+            <p class="date" id="currentDate"></p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="today.html" class="nav-link active">📅 Today</a></li>
+                <li><a href="week.html" class="nav-link">📆 This Week</a></li>
+                <li><a href="month.html" class="nav-link">📊 This Month</a></li>
+            </ul>
+        </nav>
+
+        <!-- Action Bar -->
+        <section class="action-bar">
+            <button id="addTaskBtn" class="btn-add-task">+ Add New Task</button>
+        </section>
+
+        <!-- Statistics Bar for Today -->
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stats-info">
+                    <span class="stats-label">Today's Progress</span>
+                    <span class="stats-value" id="statsValue">0/0</span>
+                </div>
+                <div class="stats-bar">
+                    <div class="stats-progress" id="statsProgress" style="width: 0%"></div>
+                </div>
+                <span class="stats-percent" id="statsPercent">0%</span>
+            </div>
+        </section>
+
+        <!-- Tasks Display Section -->
+        <section class="tasks-section">
+            <div class="timeframe-container">
+                <h2 class="timeframe-title">📅 Today's Tasks</h2>
+                <div class="tasks-list" id="tasksList">
+                    <p class="empty-message">No tasks for today</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clear All Button -->
+        <section class="action-section">
+            <button id="clearAll" class="btn-clear">Clear All Tasks</button>
+        </section>
+    </div>
+
+    <!-- Add Task Modal -->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Task</h2>
+                <button class="modal-close" onclick="closeAddModal()">&times;</button>
+            </div>
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskName">Task Name *</label>
+                    <input 
+                        type="text" 
+                        id="taskName" 
+                        placeholder="Enter task name" 
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="priority">Priority *</label>
+                        <select id="priority" required>
+                            <option value="">Select Priority</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category">
+                            <option value="">None</option>
+                            <option value="Work">Work</option>
+                            <option value="Study">Study</option>
+                            <option value="Personal">Personal</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn-save">Add Task</button>
+                    <button type="button" class="btn-cancel" onclick="closeAddModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Task</h2>
+                <button class="modal-close" onclick="closeEditModal()">&times;</button>
+            </div>
+            <form id="editForm">
+                <div class="form-group">
+                    <label for="editTaskName">Task Name *</label>
+                    <input 
+                        type="text" 
+                        id="editTaskName" 
+                        placeholder="Enter task name" 
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editPriority">Priority *</label>
+                        <select id="editPriority" required>
+                            <option value="">Select Priority</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editCategory">Category</label>
+                        <select id="editCategory">
+                            <option value="">None</option>
+                            <option value="Work">Work</option>
+                            <option value="Study">Study</option>
+                            <option value="Personal">Personal</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn-save">Save Changes</button>
+                    <button type="button" class="btn-cancel" onclick="closeEditModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2>Delete Task</h2>
+                <button class="modal-close" onclick="closeDeleteModal()">&times;</button>
+            </div>
+            <p class="delete-message">Are you sure you want to delete this task? This action cannot be undone.</p>
+            <div class="modal-actions">
+                <button class="btn-delete-confirm" onclick="confirmDelete()">Delete</button>
+                <button class="btn-cancel" onclick="closeDeleteModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Daily Planner. All rights reserved.</p>
+    </footer>
+
+    <script src="shared.js"></script>
+    <script src="today.js"></script>
+</body>
+</html>
